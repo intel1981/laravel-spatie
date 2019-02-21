@@ -18,5 +18,6 @@ Route::get('/old', function () {
     return view('welcomeold');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
+//Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
@@ -16,13 +16,13 @@
         <v-spacer></v-spacer>
         @if (Route::has('login'))
           @auth
-            <v-btn outline flat color="indigo">
+            <v-btn outline flat color="indigo" href="{{ route('home') }}" >
               <span class="font-weight-regular">Home</span>
               <v-icon right color="indigo">home</v-icon>          
             </v-btn>
           @else
             <v-btn outline flat color="blue" href="{{ route('login') }}">
-              <span class="font-weight-regular">Login</span>
+              <span class="font-weight-regular">Iniciar Sesión</span>
               <v-icon right color="blue">input</v-icon>          
             </v-btn>
             @if (Route::has('register'))
